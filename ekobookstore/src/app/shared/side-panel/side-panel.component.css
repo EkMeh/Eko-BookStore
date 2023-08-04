@@ -1,0 +1,9 @@
+.side-panel
+{
+    width: 300px;
+    height: 650px;
+    border: 1px solid rgb(7, 7, 70);
+    background: rgb(7, 7, 70);
+    color: white;
+    font-size: 24px;
+}

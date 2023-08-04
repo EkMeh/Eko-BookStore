@@ -1,0 +1,15 @@
+<div class="header d-flex align-items-center">
+    <a routerLink="/home"><h1>Eko Book</h1> <h2>Store</h2></a>
+    <form #serachBox="ngForm">
+        <div class="header-search d-flex align-items-center">
+            <input type="text" class="search-box" [(ngModel)]="searchText" name="searchText" placeholder="Search for books...">
+        </div>
+    </form>
+    <button class="btn-theme ms-4">sort</button>
+    <div class="head-right-item">
+        <div class="cart" routerLink="cart">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <div class="cart-items" *ngIf="cartItemCount">{{cartItemCount}}</div>
+        </div>
+    </div>
+</div>
