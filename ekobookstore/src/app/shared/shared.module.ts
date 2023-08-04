@@ -9,6 +9,8 @@ import { PriceDetailsComponent } from './price-details/price-details.component';
 import { SidePanelComponent } from './side-panel/side-panel.component';
 import { FormsModule } from '@angular/forms';
 import { CartComponent } from './cart/cart.component';
+import { RouterModule } from '@angular/router';
+import { CoreModule } from '../core/core.module';
 
 
 
@@ -25,8 +27,9 @@ import { CartComponent } from './cart/cart.component';
   ],
   imports: [
     CommonModule,
-    FormsModule
-
+    FormsModule,
+    RouterModule,
+    CoreModule
   ],
   exports:[HeaderComponent]
 })

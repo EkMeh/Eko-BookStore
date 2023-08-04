@@ -1,7 +1,15 @@
 <div class="side-panel">
     <div class="panel-heading">
-        <span>
-            Filters
-        </span>
+        <span>Filters</span>
+    </div>
+    <div class="filter-price d-flex justify-content-between" (click)="showPriceFilters()">
+        <span>price</span>
+    </div>
+    <div class="dropdown-container" *ngIf="ispriceFiltersVisible">
+        <div class="dropdown-list price-filter-list row">
+            <span class="dropdown-list-item" *ngFor="let priceFilter of priceFilters" (click)="filterBooksByPrice(priceFilter)">
+                Upto {{priceFilter | currency:'USD'}} 
+            </span>
+        </div>
     </div>
 </div>

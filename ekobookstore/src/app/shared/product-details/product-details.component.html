@@ -1,1 +1,27 @@
-<p>product-details works!</p>
+<div class="container">
+    <div class="product-details-container d-flex">
+        <div class="left-container">
+            <div class="product-image mb-4">
+                <img class="w-300" [src]="currentProduct.thumbnailUrl" alt="">
+            </div>
+            <div class="product-actions">
+                <button class="w-100 btn-theme" (click)="addToCart(currentProduct)" *ngIf="!isProductInCart">add to cart</button>
+                <button class="w-100 btn-theme" routerLink="/cart" *ngIf="isProductInCart">go to cart</button>
+            </div>
+        </div>
+        <div class="right-container ms-5">
+            <div class="product-details">
+                <h3>{{currentProduct.title}}</h3>
+                <h2>{{discountedPrice|currency:'USD'}}</h2>
+                <span><s>{{discountedPrice.price|currency:'USD'}}</s></span>
+                <span class="ms-3 text-success">{{currentProduct.discount}} %Off</span>
+                <p class="ms-3">Authors: {{currentProduct.authors}}</p>
+                <p class="ms-3">{{currentProduct.shortDescription}}</p>
+                <div class="description">
+                    <h3>Product Description</h3>
+                    <p>{{currentProduct.longDescription}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

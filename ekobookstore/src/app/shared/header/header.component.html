@@ -2,10 +2,16 @@
     <a routerLink="/home"><h1>Eko Book</h1> <h2>Store</h2></a>
     <form #serachBox="ngForm">
         <div class="header-search d-flex align-items-center">
-            <input type="text" class="search-box" [(ngModel)]="searchText" name="searchText" placeholder="Search for books...">
+            <input type="text" class="search-box" [(ngModel)]="searchText" name="searchText" 
+            placeholder="Search for books..." (keyup)="searchBook(searchText)">
         </div>
     </form>
-    <button class="btn-theme ms-4">sort</button>
+    <button class="btn-theme ms-4" (click)="showSortMenu()">sort</button>
+    <div class="dropdown-container" *ngIf="isSortMenuVissible">
+        <div class="dropdown-list row w-250">
+            <span class="dropdown-list-item" *ngFor="let criterion of criteria" (click)="sortBooks(criterion)">{{criterion}}</span>
+        </div>
+    </div>
     <div class="head-right-item">
         <div class="cart" routerLink="cart">
             <i class="fa-solid fa-cart-shopping"></i>
